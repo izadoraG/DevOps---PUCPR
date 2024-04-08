@@ -1,28 +1,29 @@
 name: CI
 
 on:
-  push:
+  push: 
     branches: ["main"]
-  pull_request:
+  pull_request: 
     branches: ["main"]
+
   workflow_dispatch:
 
-jobs:
+jobs:  
   build-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - run: python3 -v
 
-      # Modificado para abrir o arquivo HTML localmente
-      - name: Open HTML file locally
-        run: start file:///C:/Users/I558113/Desktop/AS1-DevOps/DevOps---PUCPR/Calculadora.html
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: python3 calculadora.py
 
   deploy-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Deploy
-        run: echo "Finalizado"
+      - uses: actions/checkout@v3
+      - run: echo "Finalizado"
+      
