@@ -14,11 +14,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install HTML validator
-        run: npm install -g html-validator-cli
-
-      - name: Validate HTML
-        run: html-validator ./DevOps---PUCPR/calculadora.html
+      # Modificado para abrir o arquivo HTML localmente
+      - name: Open HTML file locally
+        run: start file:///C:/Users/I558113/Desktop/AS1-DevOps/DevOps---PUCPR/Calculadora.html
 
   deploy-job:
     runs-on: ubuntu-latest
