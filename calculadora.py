@@ -1,3 +1,5 @@
+import sys
+
 def adicao(a, b):
     return a + b
 
@@ -14,25 +16,21 @@ def divisao(a, b):
         return a / b
 
 def main():
-    print("Bem-vindo à Calculadora!")
-    print("Selecione a operação:")
-    print("1. Adição")
-    print("2. Subtração")
-    print("3. Multiplicação")
-    print("4. Divisão")
+    if len(sys.argv) != 4:
+        print("Uso: python3 calculadora.py <operação> <número1> <número2>")
+        return
 
-    escolha = input("Digite sua escolha (1/2/3/4): ")
+    operacao = sys.argv[1]
+    num1 = float(sys.argv[2])
+    num2 = float(sys.argv[3])
 
-    num1 = float(input("Digite o primeiro número: "))
-    num2 = float(input("Digite o segundo número: "))
-
-    if escolha == '1':
+    if operacao == '1':
         print("Resultado:", adicao(num1, num2))
-    elif escolha == '2':
+    elif operacao == '2':
         print("Resultado:", subtracao(num1, num2))
-    elif escolha == '3':
+    elif operacao == '3':
         print("Resultado:", multiplicacao(num1, num2))
-    elif escolha == '4':
+    elif operacao == '4':
         print("Resultado:", divisao(num1, num2))
     else:
         print("Escolha inválida!")
