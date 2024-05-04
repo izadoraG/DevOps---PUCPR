@@ -1,13 +1,13 @@
 name: CI
 
 on:
-  push: 
+  push:
     branches: ["main"]
-  pull_request: 
+  pull_request:
     branches: ["main"]
   workflow_dispatch:
 
-jobs:  
+jobs:
   build-job:
     runs-on: ubuntu-latest
     steps:
@@ -31,3 +31,11 @@ jobs:
         run: docker build -t calculadora_python:tag .
       # Você pode adicionar etapas adicionais para testar a imagem Docker, se necessário
 
+  sast-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Install Bandit
+        run: pip install bandit
+      - name: Run Band
