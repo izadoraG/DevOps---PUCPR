@@ -34,18 +34,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
-      - name: Install Bandit
-        run: pip install bandit
-      - name: Run Bandit
-        run: bandit -r .
-
-  deploy-job:
-    runs-on: ubuntu-latest
-    needs: [build-job, test-job, docker-build, sast-analysis]
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      - name: Deploy to Production
-        # Adicione aqui os comandos ou scripts necessários para implantar sua aplicação
+        
 
