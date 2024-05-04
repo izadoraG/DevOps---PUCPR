@@ -28,6 +28,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Build Docker image
-        run: docker build -t nome_da_imagem:tag .
+        run: docker build -t calculadora_python:tag .
       # Você pode adicionar etapas adicionais para testar a imagem Docker, se necessário
 
