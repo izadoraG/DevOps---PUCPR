@@ -38,4 +38,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Bandit
         run: pip install bandit
-      - name: Run Band
+      - name: Run Bandit
+        run: bandit -r .
+
